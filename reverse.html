@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h1 {
+            font-family: Comic Sans MS;
+            font-weight: bold;
+            text-align: center;
+            font-size: 40px;
+        }
+        h2{
+            color: #8f8585;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 30px;
+        }
+
+        #first {
+            font-size: 20px;
+        }
+        #second{
+            font-size: 25px;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, #8f8585, #dbd9d9);
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        .follow-us-section-heading{
+            font-family: sans-serif;
+            font-weight: 500;
+            text-align: center;
+            font-size: 30px;
+
+        }
+        hr{
+            border-radius:10px;
+            
+        }
+        .line {
+            border-color: #8f8585;
+            padding-top: 40px;
+            border-width:3px;
+            margin-top: 90px;
+        }
+        .icon {
+    color: #8f8585;
+    font-size:30px;
+    padding-top:10px;
+    margin-top:10px;
+}
+.follow-us-icon-container{
+    padding:none;
+    margin-left:2rem;
+    width:50px;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container mt-3 mb-4">
+        <h1>Reverse a String Or Number</h1>
+    </div>
+    <div class="box m-3">
+        <p>Enter the the Number</p>
+        <input type="number" id="first"><br><br>
+
+
+
+        <button onclick="reverse()">Reverse</button>
+    </div>
+    <div class="box m-3">
+        <p>Enter the the String</p>
+        <input type="text" id="second"><br><br>
+        <button onclick="reversestring()">Reverse</button>
+    </div>
+    <hr class="line">
+        <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="follow-us-section-heading">Thanks for Visiting !</h2>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="icoons">
+                            <div class="d-flex flex-row justify-content-center icoon ">
+                                <div class="follow-us-icon-container">
+                                    <i class="fab fa-twitter icon"></i>
+                                </div>
+                                <div class="follow-us-icon-container">
+                                    <i class="fab fa-instagram icon"></i>
+                                </div>
+                                <div class="follow-us-icon-container">
+                                    <i class="fab fa-facebook icon"></i>
+                                </div>
+                                
+                            </div>
+            </div>
+
+
+    <script>
+        function reverse() {
+            let num = (document.getElementById("first").value);
+            let rev = 0;
+
+            let lastDigit;
+
+            while (num != 0) {
+                lastDigit = num % 10;
+                rev = rev * 10 + lastDigit;
+                num = Math.floor(num / 10);
+            }
+
+            window.alert("Reverse number : " + rev);
+        }
+
+        function reversestring() {
+            let input = (document.getElementById("second").value);
+            const newstr = input.split('');
+            const newstrsort=newstr.sort();
+
+            window.alert("reversed String: " + newstrsort.join(''));
+        }
+    </script>
+</body>
+
+</html>
